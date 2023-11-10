@@ -13,7 +13,7 @@
 #define EPSILON 0.0001
 #define RUN_COUNT 5
 
-#define USAGE "Usage: [v]alidate | [g]enerate n:int r:int outname:str | [p]rint inputname:str | [s]ingle-thread inputname:str is_verbose:int"
+#define USAGE "Usage: [v]alidate | [g]enerate n:int r:int outname:str | [p]rint inputname:str | [s]ingle-thread inputname:str is_verbose:int | [m]ulti-thread inputname:str is_verbose:int thread_count:int"
 
 static void validate1(void(*echelon_form)(int, double **));
 static void validate2(void(*echelon_form)(int, double **));
@@ -48,10 +48,20 @@ int main(int argc, char ** argv)
 			validate1(echelon_form_1t);
 			putchar('\n');
 			validate2(echelon_form_1t);
+			putchar('\n');
+			validate1(echelon_form_mt);
+			putchar('\n');
+			validate2(echelon_form_mt);
 
 			break;
 
 		case 'g':
+
+			if (argc != 5)
+			{
+				puts(USAGE);
+				return EXIT_SUCCESS;
+			}
 
 			n = atoi(argv[2]);
 			if (n <= 0)
@@ -83,6 +93,12 @@ int main(int argc, char ** argv)
 
 		case 'p':
 
+			if (argc != 3)
+			{
+				puts(USAGE);
+				return EXIT_SUCCESS;
+			}
+
 			fopen_s(&f, argv[2], "r");
 			if (f == NULL)
 			{
@@ -98,7 +114,12 @@ int main(int argc, char ** argv)
 
 		case 's':
 
-			char * tmp = argv[2];
+			if (argc != 4)
+			{
+				puts(USAGE);
+				return EXIT_SUCCESS;
+			}
+
 			fopen_s(&f, argv[2], "r");
 			if (f == NULL)
 			{
@@ -118,6 +139,48 @@ int main(int argc, char ** argv)
 			copy_matrix = matrix_malloc(n);
 
 			performance(echelon_form_1t, n, matrix, copy_matrix, x, is_verbose);
+			
+			free(x);
+			matrix_free(n, matrix);
+			matrix_free(n, copy_matrix);
+
+			break;
+
+		case 'm':
+
+			if (argc != 5)
+			{
+				puts(USAGE);
+				return EXIT_SUCCESS;
+			}
+
+			fopen_s(&f, argv[2], "r");
+			if (f == NULL)
+			{
+				printf("Can't open file: %s\n", argv[2]);
+				return EXIT_SUCCESS;
+			}
+
+			is_verbose = atoi(argv[3]);
+			if (is_verbose < 0)
+			{
+				printf("Invalid verbose flag: %s\n", argv[3]);
+				return EXIT_SUCCESS;
+			}
+
+			int thread_count = atoi(argv[4]);
+			if (thread_count <= 0)
+			{
+				printf("Invalid thread count: %s\n", argv[4]);
+				return EXIT_SUCCESS;
+			}
+
+			matrix_read(&n, &matrix, f);
+			x = (double *)malloc(n * sizeof(double));
+			copy_matrix = matrix_malloc(n);
+
+			omp_set_num_threads(thread_count);
+			performance(echelon_form_mt, n, matrix, copy_matrix, x, is_verbose);
 			
 			free(x);
 			matrix_free(n, matrix);

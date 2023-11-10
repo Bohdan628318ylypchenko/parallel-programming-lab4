@@ -1,0 +1,8 @@
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo s m850 0
+run 0: time = 0.150677;
+run 1: time = 0.150810;
+run 2: time = 0.151373;
+run 3: time = 0.151698;
+run 4: time = 0.157368;
+Best time: 0.150677
+PS J:\repos\Parallel computing\Gauss\x64\Release>
