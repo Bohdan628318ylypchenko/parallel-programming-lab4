@@ -1,0 +1,85 @@
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 1
+run 0: time = 0.225175;
+run 1: time = 0.228297;
+run 2: time = 0.231656;
+run 3: time = 0.224388;
+run 4: time = 0.238884;
+Best time: 0.224388
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 2
+run 0: time = 0.131149;
+run 1: time = 0.118467;
+run 2: time = 0.121058;
+run 3: time = 0.167590;
+run 4: time = 0.146837;
+Best time: 0.118467
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 3
+run 0: time = 0.079450;
+run 1: time = 0.106476;
+run 2: time = 0.115503;
+run 3: time = 0.113387;
+run 4: time = 0.100975;
+Best time: 0.079450
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 4
+run 0: time = 0.102887;
+run 1: time = 0.112713;
+run 2: time = 0.106294;
+run 3: time = 0.091729;
+run 4: time = 0.074265;
+Best time: 0.074265
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 5
+run 0: time = 0.108790;
+run 1: time = 0.102810;
+run 2: time = 0.104018;
+run 3: time = 0.103671;
+run 4: time = 0.102465;
+Best time: 0.102465
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 6
+run 0: time = 0.084585;
+run 1: time = 0.089648;
+run 2: time = 0.089170;
+run 3: time = 0.098551;
+run 4: time = 0.087591;
+Best time: 0.084585
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 7
+run 0: time = 0.076840;
+run 1: time = 0.085904;
+run 2: time = 0.081657;
+run 3: time = 0.082675;
+run 4: time = 0.083689;
+Best time: 0.076840
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 8
+run 0: time = 0.088972;
+run 1: time = 0.090789;
+run 2: time = 0.096157;
+run 3: time = 0.092157;
+run 4: time = 0.089428;
+Best time: 0.088972
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 9
+run 0: time = 0.115048;
+run 1: time = 0.121680;
+run 2: time = 0.123619;
+run 3: time = 0.122882;
+run 4: time = 0.128152;
+Best time: 0.115048
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 10
+run 0: time = 0.131889;
+run 1: time = 0.140220;
+run 2: time = 0.109975;
+run 3: time = 0.114773;
+run 4: time = 0.116979;
+Best time: 0.109975
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 11
+run 0: time = 0.102024;
+run 1: time = 0.106259;
+run 2: time = 0.112048;
+run 3: time = 0.106259;
+run 4: time = 0.104651;
+Best time: 0.102024
+PS J:\repos\Parallel computing\Gauss\x64\Release> .\GaussDemo m m850 0 12
+run 0: time = 0.092764;
+run 1: time = 0.112392;
+run 2: time = 0.098318;
+run 3: time = 0.099276;
+run 4: time = 0.100591;
+Best time: 0.092764
+PS J:\repos\Parallel computing\Gauss\x64\Release>
